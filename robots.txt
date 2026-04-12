@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://readingframe.blog/sitemap.xml
