@@ -847,6 +847,33 @@ a:hover {
   gap: 1rem;
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.hidden-link {
+  position: fixed;
+  top: 68px;
+  right: 16px;
+  width: 24px;
+  height: 24px;
+  z-index: 99;
+  opacity: 0;
+  cursor: default;
+}
+
+.hidden-link:focus {
+  opacity: 0;
+}
+
 @media (max-width: 600px) {
   .interests-grid {
     grid-template-columns: 1fr;
