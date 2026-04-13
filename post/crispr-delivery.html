@@ -59,10 +59,30 @@
         </div>
       </header>
 
+      <div class="post-toc">
+        <p class="post-toc-title">In this article</p>
+        <ol>
+          <li><a href="#the-problem">The Problem</a></li>
+          <li><a href="#the-method">The Method</a></li>
+          <li><a href="#why-it-matters">Why It Matters</a></li>
+          <li><a href="#my-take">My Take</a></li>
+        </ol>
+      </div>
+
       <article class="post-body prose" id="post-content">
 
+        <div class="post-takeaways">
+          <p class="post-takeaways-title">Key takeaways</p>
+          <ul>
+            <li>Delivery is the biggest bottleneck in CRISPR therapy — editing tools that can't reach target cells are useless in practice.</li>
+            <li>Combining lipid nanoparticles (LNPs) with spherical nucleic acids (SNAs) triples delivery efficiency over conventional methods.</li>
+            <li>Precise DNA repair rates improved by over 60%, and off-target effects decreased due to better cargo protection.</li>
+            <li>Results are in vitro only — animal model data and manufacturing scalability remain open questions.</li>
+          </ul>
+        </div>
+
         <section class="post-section">
-          <h2>The Problem</h2>
+          <h2 id="the-problem">The Problem</h2>
           <span class="accent-rule"></span>
           <p>
             CRISPR-Cas9 can cut and modify DNA with precision. That part works. What doesn't work well enough is delivery: getting the editing machinery into the right cells, at the right time, without triggering an immune response or damaging tissue along the way. Viral vectors (like AAV) are the current standard, but they have cargo size limits, can't be re-dosed easily, and sometimes provoke immune reactions. Non-viral options exist, but they've been less efficient.
@@ -73,7 +93,7 @@
         </section>
 
         <section class="post-section">
-          <h2>The Method</h2>
+          <h2 id="the-method">The Method</h2>
           <span class="accent-rule"></span>
           <p>
             LNPs are already used in mRNA vaccines. They're lipid shells that encapsulate genetic material and fuse with cell membranes to deliver their payload. SNAs are different: they're spherical structures where nucleic acids are densely arranged around a nanoparticle core. This dense arrangement gives them unique properties for getting into cells and protecting their cargo from degradation.
@@ -87,18 +107,20 @@
         </section>
 
         <section class="post-section">
-          <h2>Why It Matters</h2>
+          <h2 id="why-it-matters">Why It Matters</h2>
           <span class="accent-rule"></span>
           <p>
             Three times more effective doesn't sound dramatic until you realize that delivery efficiency is the bottleneck holding back most CRISPR therapies. A gene editing tool that works perfectly in a petri dish but can't reach the right cells in a living body is basically useless as a treatment. Every percentage point of delivery efficiency gained translates directly into more cells edited, fewer doses needed, and lower risk of side effects.
           </p>
+          <div class="post-pullquote"><p>A gene editing tool that works perfectly in a petri dish but can't reach the right cells in a living body is basically useless as a treatment.</p></div>
           <p>
             The 60% improvement in precise repair is the number I care about most. CRISPR's biggest safety concern has always been that it might cut in the wrong place or that the cell's repair machinery might fix the cut incorrectly. A delivery method that both gets more editing tools to the right location and reduces off-target activity changes the safety calculus significantly.
           </p>
         </section>
 
         <section class="post-section post-mytake">
-          <h2>My Take</h2>
+          <span class="post-opinion-label">Opinion</span>
+          <h2 id="my-take">My Take</h2>
           <span class="accent-rule"></span>
           <p>
             I like this work because it treats delivery as an engineering problem, not a biology problem. Instead of trying to redesign CRISPR itself, they combined two delivery vehicles that each solve part of the challenge. It's a pragmatic approach, and in gene therapy, pragmatic approaches tend to work better than elegant ones.
@@ -109,9 +131,36 @@
           <p>
             Also worth noting: LNP + SNA is more complex to manufacture than either one alone. If this scales, it needs to be producible at therapeutic quantities, and that's not trivial for a dual-component system. The science is solid. The manufacturing challenge is real.
           </p>
+          <div class="post-pullquote"><p>The science is solid. The manufacturing challenge is real.</p></div>
         </section>
 
       </article>
+
+      <div class="post-author-block">
+        <div class="post-author-avatar" aria-hidden="true">H</div>
+        <div class="post-author-info">
+          <p class="post-author-name">Heram Nagabhairu</p>
+          <p class="post-author-role">Student researcher · Bentonville, AR</p>
+          <p class="post-author-bio">Interested in ML, bioinformatics, and how computational methods are changing biology. I write monthly breakdowns of papers and developments I find genuinely interesting.</p>
+          <a href="../about.html" class="post-author-link">More about me →</a>
+        </div>
+      </div>
+
+      <div class="post-related">
+        <p class="post-related-title">Related posts</p>
+        <div class="post-related-grid">
+          <a href="biotech-2026.html" class="post-related-card">
+            <p class="post-related-month">January 2026</p>
+            <p class="post-related-card-title">Biotech 2026: What's Coming After a Breakthrough Year</p>
+            <p class="post-related-teaser">2025 was the year biotech stopped being incremental. Here's what's next, and what still needs fixing.</p>
+          </a>
+          <a href="gene-fix-dna.html" class="post-related-card">
+            <p class="post-related-month">May 2025</p>
+            <p class="post-related-card-title">Gene Fix: Biotech's Quiet Revolution in Human DNA</p>
+            <p class="post-related-teaser">CRISPR therapies are now editing genes in real patients. What changes, and what doesn't.</p>
+          </a>
+        </div>
+      </div>
 
       <nav class="post-nav">
         <a href="skin-cells-embryos.html" class="btn btn-ghost">← Previous Post</a>

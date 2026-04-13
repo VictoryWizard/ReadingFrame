@@ -64,16 +64,36 @@
         </div>
       </header>
 
+      <div class="post-toc">
+        <p class="post-toc-title">In this article</p>
+        <ol>
+          <li><a href="#the-paper">The Paper</a></li>
+          <li><a href="#key-methods">Key Methods</a></li>
+          <li><a href="#why-it-matters">Why It Matters</a></li>
+          <li><a href="#my-take">My Take</a></li>
+          <li><a href="#citation">Citation</a></li>
+        </ol>
+      </div>
+
       <article class="post-body prose" id="post-content">
 
+        <div class="post-takeaways">
+          <p class="post-takeaways-title">Key takeaways</p>
+          <ul>
+            <li>[Takeaway 1]</li>
+            <li>[Takeaway 2]</li>
+            <li>[Takeaway 3]</li>
+          </ul>
+        </div>
+
         <section class="post-section">
-          <h2>The Paper</h2>
+          <h2 id="the-paper">The Paper</h2>
           <span class="accent-rule"></span>
           <p>[Summary of the paper: what it's about, the problem it addresses, why it matters. Written in plain language.]</p>
         </section>
 
         <section class="post-section">
-          <h2>Key Methods</h2>
+          <h2 id="key-methods">Key Methods</h2>
           <span class="accent-rule"></span>
           <ul>
             <li><strong>[Method]:</strong> [Description]</li>
@@ -81,19 +101,20 @@
         </section>
 
         <section class="post-section">
-          <h2>Why It Matters</h2>
+          <h2 id="why-it-matters">Why It Matters</h2>
           <span class="accent-rule"></span>
           <p>[Explanation of the broader significance: what this paper changes, what it enables, why readers should care.]</p>
         </section>
 
         <section class="post-section post-mytake">
-          <h2>My Take</h2>
+          <span class="post-opinion-label">Opinion</span>
+          <h2 id="my-take">My Take</h2>
           <span class="accent-rule"></span>
           <p>[Personal opinion, critical analysis, connections to own research. This is the most important section: genuine and honest.]</p>
         </section>
 
         <section class="post-section">
-          <h2>Citation</h2>
+          <h2 id="citation">Citation</h2>
           <span class="accent-rule"></span>
           <div class="post-citation">
             <p>[Author Last, First], [Author Last, First], et al. "[Paper Title]." <em>[Journal Name]</em>, vol. [X], no. [X], [Year], pp. [XXX–XXX]. DOI: [DOI].</p>
@@ -101,6 +122,32 @@
         </section>
 
       </article>
+
+      <div class="post-author-block">
+        <div class="post-author-avatar" aria-hidden="true">H</div>
+        <div class="post-author-info">
+          <p class="post-author-name">Heram Nagabhairu</p>
+          <p class="post-author-role">Student researcher · Bentonville, AR</p>
+          <p class="post-author-bio">Interested in ML, bioinformatics, and how computational methods are changing biology. I write monthly breakdowns of papers and developments I find genuinely interesting.</p>
+          <a href="../about.html" class="post-author-link">More about me →</a>
+        </div>
+      </div>
+
+      <div class="post-related">
+        <p class="post-related-title">Related posts</p>
+        <div class="post-related-grid">
+          <a href="[PREVIOUS-POST].html" class="post-related-card">
+            <p class="post-related-month">[Month Year]</p>
+            <p class="post-related-card-title">[Previous Post Title]</p>
+            <p class="post-related-teaser">[Short teaser]</p>
+          </a>
+          <a href="[NEXT-POST].html" class="post-related-card">
+            <p class="post-related-month">[Month Year]</p>
+            <p class="post-related-card-title">[Next Post Title]</p>
+            <p class="post-related-teaser">[Short teaser]</p>
+          </a>
+        </div>
+      </div>
 
       <nav class="post-nav">
         <span class="post-nav-empty">← No earlier posts</span>
