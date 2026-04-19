@@ -195,7 +195,8 @@ a:hover {
   gap: 1.5rem;
 }
 
-.footer-links a {
+.footer-links a,
+.footer-links span {
   font-size: 13px;
   color: var(--color-text-muted);
   transition: all 0.2s ease;
