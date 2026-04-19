@@ -80,6 +80,7 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 }
 
 .nav-logo {
@@ -117,6 +118,7 @@ a:hover {
   list-style: none;
   gap: 2rem;
   align-items: center;
+  margin-left: auto;
 }
 
 .nav-links a {
@@ -945,26 +947,28 @@ a:hover {
   background: none;
   border: 1px solid var(--color-border);
   border-radius: 50%;
-  width: 34px;
-  height: 34px;
+  width: 36px;
+  height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   padding: 0;
-  transition: border-color 0.2s ease, transform 0.15s ease;
+  margin-left: 1rem;
+  transition: border-color 0.2s ease, transform 0.15s ease, background 0.2s ease;
   flex-shrink: 0;
 }
 
 .theme-toggle:hover {
   border-color: var(--color-accent);
-  transform: scale(1.05);
+  transform: scale(1.08);
+  background: rgba(15, 118, 110, 0.06);
 }
 
 .theme-toggle svg {
-  width: 16px;
-  height: 16px;
-  fill: none;
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
   stroke: var(--color-text);
   stroke-width: 2;
   stroke-linecap: round;
@@ -972,15 +976,21 @@ a:hover {
 }
 
 [data-theme="dark"] .theme-toggle svg {
+  fill: none;
   stroke: var(--color-text);
+}
+
+[data-theme="dark"] .theme-toggle:hover {
+  background: rgba(46, 196, 182, 0.1);
 }
 
 @media (max-width: 768px) {
   .theme-toggle {
     position: absolute;
-    right: 4rem;
+    right: 4.5rem;
     top: 50%;
     transform: translateY(-50%);
+    margin-left: 0;
   }
 }
 
