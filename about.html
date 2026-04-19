@@ -131,8 +131,9 @@
     (function() {
       var toggle = document.getElementById('theme-toggle');
       var icon = document.getElementById('theme-icon-moon');
+      var stored = sessionStorage.getItem('theme');
       var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      var isDark = prefersDark;
+      var isDark = stored ? stored === 'dark' : prefersDark;
       document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
       function updateIcon() {
         if (isDark) {
@@ -146,6 +147,7 @@
       updateIcon();
       toggle.addEventListener('click', function() {
         isDark = !isDark;
+        sessionStorage.setItem('theme', isDark ? 'dark' : 'light');
         document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
         updateIcon();
       });
