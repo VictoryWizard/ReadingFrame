@@ -1,0 +1,68 @@
+{
+  "name": "ReadingFrame",
+  "tagline": "One breakthrough. Every month. Decoded.",
+  "mission": "Monthly, hype-free breakdowns of biotech and AI research — methods, limitations, and what findings actually mean — from a high school researcher in Bentonville, Arkansas.",
+  "author": {
+    "name": "Heram Nagabhairu",
+    "role": "Student researcher · Bentonville, AR",
+    "initials": "H",
+    "bio": "I'm a high school researcher interested in ML, bioinformatics, and computational biology. ReadingFrame is where I write about one paper or development a month — without the press release layer.",
+    "longBio": "I got into ML and bioinformatics a few years ago — graph neural networks, gene expression, computational approaches to problems that are still genuinely hard. Mostly Python, Google Colab, GitHub. No university affiliation. One post a month. No ads, no affiliate links.",
+    "portrait": "/images/author-portrait.svg",
+    "interests": [
+      "Cancer biology & AI",
+      "Graph neural networks",
+      "Gene expression analysis",
+      "Drug resistance prediction",
+      "Bioinformatics pipelines"
+    ]
+  },
+  "social": {
+    "github": "https://github.com/",
+    "instagram": "https://www.instagram.com/heram.nagabhairu/",
+    "linkedin": "https://www.linkedin.com/in/heramn/",
+    "email": "nheram9@gmail.com"
+  },
+  "newsletter": {
+    "action": "https://your-list.us21.list-manage.com/subscribe/post?u=REPLACE&id=REPLACE",
+    "provider": "Mailchimp or Substack — replace action URL in content/site.json"
+  },
+  "categories": [
+    {
+      "slug": "biotech",
+      "name": "Biotech",
+      "description": "Gene editing, therapeutics, and the systems that move discoveries from lab to clinic."
+    },
+    {
+      "slug": "crispr",
+      "name": "CRISPR",
+      "description": "Delivery, safety, and clinical translation of programmable genome editing."
+    },
+    {
+      "slug": "ai",
+      "name": "AI & ML",
+      "description": "Machine learning in drug discovery, biomedicine, and biological data analysis."
+    },
+    {
+      "slug": "neuroscience",
+      "name": "Neuroscience",
+      "description": "Brain-computer interfaces and neural technology with real trial data."
+    },
+    {
+      "slug": "de-extinction",
+      "name": "De-Extinction",
+      "description": "Engineered organisms, conservation claims, and what the science actually shows."
+    }
+  ],
+  "analytics": {
+    "plausibleDomain": ""
+  },
+  "giscus": {
+    "repo": "your-org/ReadingFrame",
+    "repoId": "REPLACE",
+    "category": "Announcements",
+    "categoryId": "REPLACE",
+    "mapping": "pathname",
+    "reactionsEnabled": true
+  }
+}

@@ -1,0 +1,98 @@
+[
+  {
+    "slug": "biotech-2026",
+    "title": "Biotech 2026: What Comes After a Breakthrough Year",
+    "excerpt": "2025 was not just another productive year for biotech. Multiple technologies reached new levels of practical impact. Here is what comes next.",
+    "date": "2026-01-01T00:00:00.000Z",
+    "categories": [
+      "Biotech",
+      "CRISPR",
+      "AI Drug Discovery"
+    ],
+    "body": "\n## A Year of Real Breakthroughs {#the-year-with-clear-breakthroughs}\n\n          \n\nFor years, new biotech discoveries showed up in journals and press releases, but rarely made a real difference for patients right away. That changed in 2025. This time, some big advances moved straight into clinical use.\n          \n          \n\nTake Baby KJ. He became the first infant to receive a CRISPR-based gene editing treatment designed just for him, a therapy built from scratch to correct his rare, life-threatening liver disorder. His liver couldn't clear ammonia, a fatal condition in infants. Doctors created a custom base-editing therapy, packed it in lipid nanoparticles, and treated him. The intervention worked: he's now healthy, growing, and walking. It wasn't just a possibility on paper, it happened.\n          \n          \n\n> It wasn't just a possibility on paper, it happened.\n\n          \n\nOn the technology front, there's a new editing tool in the mix. Bridge recombinases, enzymes from bacteria, managed to insert huge pieces of DNA, up to a million base pairs, which is something CRISPR usually struggles with. This lets scientists deliver whole clusters of genes, enabling new kinds of gene and cell therapies. If these results hold up in human cells, the field could see complex genetic medicine projects start to look practical.\n          \n          \n\nGenome sequencing passed a major milestone too. Roche sequenced and analyzed an entire human genome in less than four hours, a remarkable shift from the days or months it once required. With this kind of speed, hospitals can finally deploy whole-genome sequencing as a routine diagnostic tool, not just in research labs.\n          \n          \n\nAI-designed biology moved forward as well. Tools like RFDiffusion and AlphaFold now help design brand-new proteins, including synthetic enzymes that can catalyze reactions nature can't do. Meanwhile, oral weight-loss drugs reached late-stage clinical trials: Eli Lilly's orforglipron, for instanc"
+  },
+  {
+    "slug": "skin-cells-embryos",
+    "title": "A New Era: Starting Life From Skin Cells",
+    "excerpt": "Scientists created embryos from ordinary skin cells. The science is real, but the ethical questions are just getting started.",
+    "date": "2025-09-30T00:00:00.000Z",
+    "categories": [
+      "Embryology",
+      "Stem Cells",
+      "Reproductive Tech"
+    ],
+    "body": "\n## The Breakthrough {#the-breakthrough}\n\n          \n\nScientists have done something that sounds like science fiction: they created embryos from regular skin cells. Not cloned, but built. This is a different process entirely, and it opens doors that reproductive biology wasn't sure were even there.\n          \n          \n\nThe starting point is ordinary skin cells. Using a combination of chemical signals and genetic reprogramming, scientists convert them into induced pluripotent stem cells (iPSCs), cells that can become any type of cell in the body. From there, they guide these stem cells to form blastoids: tiny embryo-like structures that look and behave like natural embryos in their earliest stages.\n          \n          \n\nIn the lab, these blastoids can attach to uterine tissue and start developing like normal embryos would. Scientists have already produced live, healthy mice using this method. The technology works. The question is what happens when we try it in humans, and whether we should.\n          \n        \n\n        \n          \n\n## Why It Matters {#why-it-matters}\n\n          \n\nThe most immediate application is fertility. Couples who can't have children, whether because of infertility, cancer treatment, or genetic conditions, might be able to have biological children using this approach. Same-sex couples could theoretically have children biologically related to both partners. That's a big deal for a lot of people.\n          \n          \n\nOn the research side, this gives scientists a way to study early human development without using actual human embryos, which has been a major ethical and legal roadblock. If we can understand how embryos develop in those first critical days, we can learn about what causes birth defects, chromosomal abnormalities, and early pregnancy loss, things we've barely been able to study because we can't experiment on real embryos.\n          \n        \n\n        \n          \n\n## The Gaps {#the-gaps}\n\n          \n\nThe success rate is low. Most a"
+  },
+  {
+    "slug": "crispr-delivery",
+    "title": "A Breakthrough in CRISPR Delivery",
+    "excerpt": "The hardest part of gene editing isn't the editing; it's getting the tools into the right cells. A new method triples efficiency.",
+    "date": "2025-09-24T00:00:00.000Z",
+    "categories": [
+      "CRISPR",
+      "Gene Therapy",
+      "Drug Delivery"
+    ],
+    "body": "\n## The Problem {#the-problem}\n\n          \n\nCRISPR-Cas9 can cut and modify DNA with precision. That part works. What doesn't work well enough is delivery: getting the editing machinery into the right cells, at the right time, without triggering an immune response or damaging tissue along the way. Viral vectors (like AAV) are the current standard, but they have cargo size limits, can't be re-dosed easily, and sometimes provoke immune reactions. Non-viral options exist, but they've been less efficient.\n          \n          \n\nThat's why newly published research from Northwestern University caught my attention. The researchers combined two existing delivery technologies, lipid nanoparticles (LNPs) and spherical nucleic acids (SNAs), into a single system that delivers CRISPR components more effectively than either method alone.\n          \n        \n\n        \n          \n\n## The Method {#the-method}\n\n          \n\nLNPs are already used in mRNA vaccines. They're lipid shells that encapsulate genetic material and fuse with cell membranes to deliver their payload. SNAs are different: they're spherical structures where nucleic acids are densely arranged around a nanoparticle core. This dense arrangement gives them unique properties for getting into cells and protecting their cargo from degradation.\n          \n          \n\nThe Northwestern team essentially put CRISPR components inside an SNA structure, then wrapped that inside an LNP. The LNP gets the package to the cell. The SNA structure then helps the CRISPR machinery get into the cell nucleus more efficiently and protects it from being broken down before it can do its job.\n          \n          \n\nIn their lab studies, the results were clear: the combined system delivered CRISPR about three times more effectively than conventional methods. Precise DNA repair rates improved by over 60%. Off-target effects decreased because the system protects the editing components better, giving them less time to cause collateral damage.\n        "
+  },
+  {
+    "slug": "fault-lines-motion",
+    "title": "When the Earth Tears: Capturing Fault Lines in Motion",
+    "excerpt": "For the first time, researchers recorded high-speed video of the Earth's surface splitting apart during an earthquake. It's more than dramatic footage. It's data we've never had before.",
+    "date": "2025-09-03T00:00:00.000Z",
+    "categories": [
+      "Geoscience",
+      "Seismology",
+      "Earthquakes"
+    ],
+    "body": "\n## What Happened {#what-happened}\n\n          \n\nOn August 10, 2025, a research team captured something that's never been recorded before: high-speed video of the Earth's surface visibly splitting apart along a fault line during a powerful earthquake. High-speed cameras paired with ground sensors recorded the actual moment of seismic rupture: the crust tearing open in real time.\n          \n          \n\nWe've modeled earthquakes computationally for decades. We've studied fault zones after the fact. We've measured seismic waves with incredible precision. But actually seeing the ground tear open as it happens? That's new.\n          \n        \n\n        \n          \n\n## Why This Matters {#why-this-matters}\n\n          \n\nEarthquake prediction is one of the oldest problems in geoscience, and we're still bad at it. Most of our models are built on indirect evidence: seismic wave data, GPS measurements, historical patterns. We've never been able to directly observe the physical mechanics of how a fault actually ruptures. Theories about how energy propagates, how fractures initiate and spread, how far and fast a rupture travels have been educated guesses backed by indirect measurements.\n          \n          \n\nThis footage changes that. Seeing a rupture happen gives researchers direct observational data on fracture velocity, surface displacement, and energy release that computational models can now be tested against. That matters for earthquake prediction models, early-warning systems, and structural engineering in seismic zones. If we can understand how ruptures evolve, we can build models that predict them better, and even a few seconds of improved warning time saves lives in an earthquake.\n          \n        \n\n        \n          \n\n## My Take {#my-take}\n\n          \n\nThis is one of those findings that's cool on its own terms and also practically important. Geoscience isn't my main area, but I work with models and data enough to appreciate what it means to get a direct observation a"
+  },
+  {
+    "slug": "neuralink-human-trial",
+    "title": "Neuralink's First Human Trial: A Mind-Controlled Future Begins",
+    "excerpt": "A paralyzed man controlled a computer cursor with his thoughts. Real progress, and real questions about where brain-computer interfaces go from here.",
+    "date": "2025-07-27T00:00:00.000Z",
+    "categories": [
+      "Neuralink",
+      "BCI",
+      "Neuroscience"
+    ],
+    "body": "\n## What Happened {#what-happened}\n\n          \n\nNeuralink implanted its brain-computer interface, a coin-sized chip called the Link, into a 29-year-old man paralyzed from the shoulders down. The device was surgically placed in the motor cortex, the part of the brain responsible for voluntary movement. Once connected, it began interpreting his neural signals and translating them into commands.\n          \n          \n\nHe moved a cursor on a screen using only his thoughts. No mouse, no physical input, just neural activity decoded in real time. It's the first time a direct, functional brain-to-computer connection has worked in a human outside a lab setting.\n          \n          \n\nThis is a milestone. But it's also the beginning of a much longer and more complicated story.\n          \n        \n\n        \n          \n\n## The Medical Case {#the-medical-case}\n\n          \n\nFor people with paralysis or neurodegenerative conditions, this technology is genuinely transformative. If a brain implant can reliably translate intent into action, such as moving a cursor, selecting items, and eventually controlling a prosthetic limb, it restores a degree of autonomy that these conditions take away. The medical case is clear and compelling.\n          \n          \n\nNeuralink's stated near-term goals focus on these applications: restoring communication, movement, and possibly vision for people who've lost these abilities. The Link's current capabilities are modest, essentially cursor control, but as a proof of concept, it matters. You can't get to complex motor control without first showing that basic signal decoding works reliably in a human.\n          \n        \n\n        \n          \n\n## The Bigger Ambitions {#the-bigger-ambitions}\n\n          \n\nNeuralink's long-term vision extends well beyond medical use. The company has talked about healthy people using brain-computer interfaces to control computers and phones, interact with AI directly, store and replay memories, and potentially enhance cogni"
+  },
+  {
+    "slug": "gene-fix-dna",
+    "title": "Gene Fix: Biotech's Quiet Revolution in Human DNA",
+    "excerpt": "CRISPR therapies are now editing genes in real patients. The FDA approved the first one. What actually changes, and what doesn't.",
+    "date": "2025-05-22T00:00:00.000Z",
+    "categories": [
+      "CRISPR",
+      "Gene Editing",
+      "Sickle Cell"
+    ],
+    "body": "\n## The Breakthrough {#the-breakthrough}\n\n          \n\nIn late 2023, the FDA approved Casgevy, a CRISPR-based therapy for sickle cell disease developed by CRISPR Therapeutics and Vertex. It works by editing the BCL11A gene in a patient's own bone marrow cells, reactivating fetal hemoglobin production and effectively stopping the sickling of red blood cells. Patients who previously relied on regular blood transfusions to survive are now living symptom-free.\n          \n          \n\nThis was the first FDA-approved CRISPR therapy for any condition. It proved something a lot of people doubted: that gene editing could move from a powerful lab tool to an actual treatment administered to real patients with a real disease.\n          \n          \n\nSince then, the field has expanded. Companies like Intellia and Beam Therapeutics are running trials for hereditary blindness, blood disorders, and certain cancers. The technology is moving fast.\n          \n        \n\n        \n          \n\n## Why It Matters {#why-it-matters}\n\n          \n\nThe difference between this and conventional treatments is fundamental. Existing therapies for genetic diseases manage symptoms; they don't address the underlying cause. CRISPR goes straight to the source: the DNA. If you fix the gene, you fix the disease at its root.\n          \n          \n\n> If you fix the gene, you fix the disease at its root.\n\n          \n\nSickle cell disease is a clear example. The standard of care has been hydroxyurea, pain management, and blood transfusions. These keep people alive but don't stop the disease. Casgevy edits the genetic instruction that causes sickling in the first place. One treatment, not a lifetime of symptom management.\n          \n        \n\n        \n          \n\n## The Concerns {#the-concerns}\n\n          \n\nOff-target effects are the obvious safety concern. CRISPR is precise, but \"precise\" doesn't mean \"perfect.\" The editing machinery can sometimes cut at unintended locations in the genome, and we don't always know "
+  },
+  {
+    "slug": "dire-wolves-colossal",
+    "title": "Dire Wolves Return: Colossal's Next Big Leap After the Woolly Mice",
+    "excerpt": "Three wolf pups engineered to resemble extinct dire wolves. The biotech is impressive, but the \"de-extinction\" label deserves scrutiny.",
+    "date": "2025-04-18T00:00:00.000Z",
+    "categories": [
+      "De-Extinction",
+      "Gene Editing",
+      "Colossal Biosciences"
+    ],
+    "body": "\n## What Happened {#what-happened}\n\n          \n\nColossal Biosciences announced the birth of three wolf pups, Romulus, Remus, and Khaleesi, engineered to resemble the extinct dire wolf. The company edited 20 genes in gray wolf embryos using ancient DNA extracted from dire wolf fossils. The resulting pups have larger body size, denser fur, and physical features that echo their Ice Age ancestors, which went extinct over 13,000 years ago.\n          \n          \n\nThis comes on the heels of their \"woolly mice\" project, where they used similar techniques to give mice mammoth-like fur. Colossal is building a track record of using gene editing to recreate extinct traits in living animals, and they're doing it with increasing sophistication.\n          \n        \n\n        \n          \n\n## The Biotech {#the-biotech}\n\n          \n\nWhat Colossal is actually doing is precision gene editing, not resurrection. They can't clone a dire wolf: the DNA is too degraded after 13,000 years. What they can do is sequence fragments of preserved dire wolf DNA, identify the genes responsible for the traits that made dire wolves distinct (size, bone density, coat type), and then edit the corresponding genes in a modern gray wolf embryo.\n          \n          \n\nEditing 20 genes simultaneously is technically hard. Each edit needs to land in the right place without causing off-target effects, and the interactions between those genes aren't fully predictable. That they produced three viable pups with the intended phenotypic changes is a genuine technical achievement.\n          \n        \n\n        \n          \n\n## Why \"De-Extinction\" Is the Wrong Word {#why-de-extinction-is-the-wrong-word}\n\n          \n\nThese aren't dire wolves. They're gray wolves with 20 edited genes that make them look like dire wolves. The distinction matters. A true dire wolf had a full genome shaped by tens of thousands of years of evolution (metabolic pathways, immune responses, behavioral tendencies, gut microbiome), most of which we "
+  },
+  {
+    "slug": "woolly-mammoth-return",
+    "title": "The Return of the Woolly Mammoth",
+    "excerpt": "Colossal Biosciences created mice with mammoth-like fur. It's a proof of concept for de-extinction, and it raises real questions about whether we should.",
+    "date": "2025-03-16T00:00:00.000Z",
+    "categories": [
+      "De-Extinction",
+      "Gene Editing",
+      "Colossal Biosciences"
+    ],
+    "body": "\n## The Breakthrough {#the-breakthrough}\n\n          \n\nColossal Biosciences, the company working to bring back the woolly mammoth, announced a key milestone: \"woolly mice.\" These are lab mice engineered with mammoth-like fur traits using gene editing. It's not a mammoth. It's not even close. But it proves that the core technique works: you can identify cold-adaptation genes from extinct species and insert them into a living animal, and the animal will express the trait.\n          \n          \n\nThe company's full goal is ambitious: create a cold-resistant elephant with mammoth traits by 2028. Asian elephants are the mammoth's closest living relatives. Colossal's plan is to edit key cold-adaptation genes into Asian elephant cells, including hair density, fat storage, ear size (smaller ears lose less heat), and hemoglobin that works better in cold. They then plan to use those cells to create an embryo carried by a surrogate.\n          \n        \n\n        \n          \n\n## Why It Matters {#why-it-matters}\n\n          \n\nThe ecological argument is interesting. Mammoths helped maintain Arctic grasslands by knocking down trees and trampling snow, which kept the ground frozen. Without them, those grasslands turned into forests, and the permafrost started thawing, releasing stored carbon and methane. Some researchers argue that reintroducing mammoth-like animals could help slow permafrost melting and, by extension, climate change.\n          \n          \n\nThe biotech argument is more straightforward. If you can edit enough genes in the right way to give a mouse mammoth fur, you can probably do something similar in a larger animal. The woolly mice are proof that the pipeline, from identifying ancient genes to editing them into a modern genome to producing a viable animal, actually works end to end.\n          \n        \n\n        \n          \n\n## The Counterarguments {#the-counterarguments}\n\n          \n\nCritics point out that the resources going into de-extinction could be spent on conser"
+  }
+]
