@@ -3,13 +3,11 @@ import { HomeHero } from "@/components/HomeHero";
 import { AuthorSpotlight } from "@/components/AuthorSpotlight";
 import { NewsletterForm } from "@/components/NewsletterForm";
 import { PostFilters } from "@/components/PostFilters";
-import { getAllPosts, getAllTopicsFromPosts } from "@/lib/posts";
+import { getAllPosts } from "@/lib/posts";
 
 export default function HomePage() {
   const posts = getAllPosts();
   const latest = posts[0];
-  const recent = posts.slice(0, 6);
-
   return (
     <>
       <HomeHero latestSlug={latest?.slug ?? "biotech-2026"} />
@@ -27,7 +25,7 @@ export default function HomePage() {
               View all posts →
             </Link>
           </div>
-          <PostFilters posts={recent} allTopics={getAllTopicsFromPosts()} />
+          <PostFilters posts={posts} />
         </div>
       </section>
 

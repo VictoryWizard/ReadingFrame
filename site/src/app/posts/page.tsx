@@ -1,6 +1,6 @@
 import { ArchiveTimeline } from "@/components/ArchiveTimeline";
 import { PostFilters } from "@/components/PostFilters";
-import { getAllPosts, getAllTopicsFromPosts } from "@/lib/posts";
+import { getAllPosts } from "@/lib/posts";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -27,7 +27,7 @@ export default function PostsPage() {
       </header>
 
       <div className="rf-container py-12">
-        <PostFilters posts={posts} allTopics={getAllTopicsFromPosts()} />
+        <PostFilters posts={posts} />
       </div>
 
       <section className="border-t border-[var(--rf-border)] bg-[var(--rf-bg-muted)] py-12">

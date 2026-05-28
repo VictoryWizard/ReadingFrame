@@ -5,9 +5,17 @@ import { defaultImageAlt } from "@/lib/post-display";
 import type { Post } from "@/lib/types";
 import { TopicChip } from "./TopicChip";
 
-export function PostCard({ post }: { post: Post }) {
+export function PostCard({
+  post,
+  animate = true,
+}: {
+  post: Post;
+  animate?: boolean;
+}) {
   return (
-    <article className="fade-in group overflow-hidden rounded-[var(--rf-radius)] border border-[var(--rf-border)] bg-[var(--rf-bg-elevated)] shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+    <article
+      className={`${animate ? "fade-in" : ""} group overflow-hidden rounded-[var(--rf-radius)] border border-[var(--rf-border)] bg-[var(--rf-bg-elevated)] shadow-sm transition hover:-translate-y-1 hover:shadow-lg`}
+    >
       <Link href={`/posts/${post.slug}/`} className="block no-underline">
         <div className="relative aspect-[16/9] overflow-hidden bg-[var(--rf-bg-muted)]">
           <Image
