@@ -6,7 +6,8 @@ export type PostFrontmatter = {
   date: string;
   excerpt: string;
   image: string;
-  categories: string[];
+  imageAlt?: string;
+  topics: string[];
   readingMinutes?: number;
   takeaways: string[];
   toc: TocItem[];
@@ -19,10 +20,9 @@ export type PostFrontmatter = {
 
 export type Post = PostFrontmatter & {
   content: string;
-  html?: string;
 };
 
-export type CategoryMeta = {
+export type TopicMeta = {
   slug: string;
   name: string;
   description: string;

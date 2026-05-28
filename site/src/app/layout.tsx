@@ -2,11 +2,14 @@ import type { Metadata } from "next";
 import { Fraunces, Source_Sans_3 } from "next/font/google";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { AccessibilityProvider } from "@/components/providers/AccessibilityProvider";
+import { SearchProvider } from "@/components/SearchProvider";
 import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
+import { SkipLink } from "@/components/SkipLink";
 import { FadeInObserver } from "@/components/FadeInObserver";
 import { AccessibilityToolbar } from "@/components/AccessibilityToolbar";
 import { Analytics } from "@/components/Analytics";
+import { getSiteConfig } from "@/lib/site";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -21,14 +24,15 @@ const sourceSans = Source_Sans_3({
   display: "swap",
 });
 
+const { brandLine, mission } = getSiteConfig();
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://reading-frame.com"),
   title: {
-    default: "ReadingFrame | Bio/AI Breakdowns",
+    default: `ReadingFrame | ${brandLine}`,
     template: "%s | ReadingFrame",
   },
-  description:
-    "Monthly, hype-free breakdowns of biotech and AI research by a student researcher in Bentonville, Arkansas.",
+  description: mission,
   openGraph: {
     siteName: "ReadingFrame",
     locale: "en_US",
@@ -48,12 +52,17 @@ export default function RootLayout({
       >
         <ThemeProvider>
           <AccessibilityProvider>
-            <SiteNav />
-            <main className="flex-1">{children}</main>
-            <SiteFooter />
-            <FadeInObserver />
-            <AccessibilityToolbar />
-            <Analytics />
+            <SearchProvider>
+              <SkipLink />
+              <SiteNav />
+              <main id="main-content" className="flex-1" tabIndex={-1}>
+                {children}
+              </main>
+              <SiteFooter />
+              <FadeInObserver />
+              <AccessibilityToolbar />
+              <Analytics />
+            </SearchProvider>
           </AccessibilityProvider>
         </ThemeProvider>
       </body>

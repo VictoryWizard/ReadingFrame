@@ -4,7 +4,7 @@ slug: dire-wolves-colossal
 date: 2025-04-18
 excerpt: "Three wolf pups engineered to resemble extinct dire wolves. The biotech is impressive, but the \"de-extinction\" label deserves scrutiny."
 image: "/images/dire-wolves-colossal.svg"
-categories:
+topics:
   - "De-Extinction"
   - "Gene Editing"
   - "Colossal Biosciences"

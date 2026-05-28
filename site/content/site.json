@@ -1,5 +1,6 @@
 {
   "name": "ReadingFrame",
+  "brandLine": "Bio/AI research breakdowns",
   "tagline": "One breakthrough. Every month. Decoded.",
   "mission": "Monthly, hype-free breakdowns of biotech and AI research — methods, limitations, and what findings actually mean — from a high school researcher in Bentonville, Arkansas.",
   "author": {
@@ -9,6 +10,7 @@
     "bio": "I'm a high school researcher interested in ML, bioinformatics, and computational biology. ReadingFrame is where I write about one paper or development a month — without the press release layer.",
     "longBio": "I got into ML and bioinformatics a few years ago — graph neural networks, gene expression, computational approaches to problems that are still genuinely hard. Mostly Python, Google Colab, GitHub. No university affiliation. One post a month. No ads, no affiliate links.",
     "portrait": "/images/author-portrait.svg",
+    "portraitAlt": "Portrait of Heram Nagabhairu, ReadingFrame author",
     "interests": [
       "Cancer biology & AI",
       "Graph neural networks",
@@ -18,16 +20,17 @@
     ]
   },
   "social": {
-    "github": "https://github.com/",
+    "github": "https://github.com/VictoryWizard",
     "instagram": "https://www.instagram.com/heram.nagabhairu/",
     "linkedin": "https://www.linkedin.com/in/heramn/",
     "email": "nheram9@gmail.com"
   },
-  "newsletter": {
-    "action": "https://your-list.us21.list-manage.com/subscribe/post?u=REPLACE&id=REPLACE",
-    "provider": "Mailchimp or Substack — replace action URL in content/site.json"
+  "forms": {
+    "contact": "",
+    "newsletter": "",
+    "hint": "Set forms.contact and forms.newsletter to your Formspree endpoints (https://formspree.io/f/xxxx)"
   },
-  "categories": [
+  "topics": [
     {
       "slug": "biotech",
       "name": "Biotech",
@@ -50,18 +53,24 @@
     },
     {
       "slug": "de-extinction",
-      "name": "De-Extinction",
+      "name": "De-extinction",
       "description": "Engineered organisms, conservation claims, and what the science actually shows."
     }
   ],
   "analytics": {
     "plausibleDomain": ""
   },
+  "comments": {
+    "provider": "utterances",
+    "repo": "VictoryWizard/ReadingFrame",
+    "issueTerm": "pathname",
+    "label": "comments"
+  },
   "giscus": {
-    "repo": "your-org/ReadingFrame",
-    "repoId": "REPLACE",
-    "category": "Announcements",
-    "categoryId": "REPLACE",
+    "repo": "VictoryWizard/ReadingFrame",
+    "repoId": "R_kgDOSAY5wA",
+    "category": "General",
+    "categoryId": "",
     "mapping": "pathname",
     "reactionsEnabled": true
   }

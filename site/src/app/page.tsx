@@ -1,10 +1,9 @@
 import Link from "next/link";
 import { HomeHero } from "@/components/HomeHero";
-import { PostCard } from "@/components/PostCard";
 import { AuthorSpotlight } from "@/components/AuthorSpotlight";
 import { NewsletterForm } from "@/components/NewsletterForm";
 import { PostFilters } from "@/components/PostFilters";
-import { getAllPosts, getAllCategoriesFromPosts } from "@/lib/posts";
+import { getAllPosts, getAllTopicsFromPosts } from "@/lib/posts";
 
 export default function HomePage() {
   const posts = getAllPosts();
@@ -28,7 +27,7 @@ export default function HomePage() {
               View all posts →
             </Link>
           </div>
-          <PostFilters posts={recent} allCategories={getAllCategoriesFromPosts()} />
+          <PostFilters posts={recent} allTopics={getAllTopicsFromPosts()} />
         </div>
       </section>
 

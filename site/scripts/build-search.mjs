@@ -12,12 +12,13 @@ const items = fs
   .filter((f) => f.endsWith(".md"))
   .map((f) => {
     const { data, content } = matter(fs.readFileSync(path.join(postsDir, f), "utf8"));
+    const topics = data.topics ?? data.categories ?? [];
     return {
       slug: data.slug,
       title: data.title,
       excerpt: data.excerpt,
       date: data.date,
-      categories: data.categories,
+      topics,
       body: content.slice(0, 2000),
     };
   })

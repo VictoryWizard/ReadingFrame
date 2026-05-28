@@ -4,7 +4,7 @@ slug: fault-lines-motion
 date: 2025-09-03
 excerpt: "For the first time, researchers recorded high-speed video of the Earth's surface splitting apart during an earthquake. It's more than dramatic footage. It's data we've never had before."
 image: "/images/fault-lines-motion.svg"
-categories:
+topics:
   - "Geoscience"
   - "Seismology"
   - "Earthquakes"

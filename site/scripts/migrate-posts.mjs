@@ -92,7 +92,7 @@ for (const file of fs.readdirSync(legacyDir)) {
     `date: ${date}`,
     `excerpt: ${yamlQuote(subtitle)}`,
     `image: ${yamlQuote(`/images/${imageMap[slug] || "biotech-2026.svg"}`)}`,
-    "categories:",
+    "topics:",
     ...categories.map((c) => `  - ${yamlQuote(c)}`),
     `readingMinutes: ${readMin || 8}`,
     "takeaways:",

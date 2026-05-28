@@ -1,6 +1,8 @@
 import Link from "next/link";
+import { getSiteConfig } from "@/lib/site";
 
 export function Logo({ className = "" }: { className?: string }) {
+  const { brandLine } = getSiteConfig();
   return (
     <Link href="/" className={`group flex items-center gap-2.5 no-underline ${className}`}>
       <span
@@ -13,8 +15,8 @@ export function Logo({ className = "" }: { className?: string }) {
         <span className="font-[family-name:var(--font-display)] text-lg font-semibold tracking-tight text-[var(--rf-text)] group-hover:text-[var(--rf-accent)]">
           ReadingFrame
         </span>
-        <span className="text-[0.65rem] font-medium uppercase tracking-[0.14em] text-[var(--rf-text-muted)]">
-          Bio / AI breakdowns
+        <span className="text-[0.65rem] font-medium lowercase tracking-[0.06em] text-[var(--rf-text-muted)]">
+          {brandLine}
         </span>
       </span>
     </Link>

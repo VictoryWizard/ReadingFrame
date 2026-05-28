@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { categorySlugFromName } from "@/lib/site";
+import { topicSlugFromName } from "@/lib/site";
 
 const chipClass = (name: string) => {
   const n = name.toLowerCase();
@@ -17,18 +17,18 @@ const chipClass = (name: string) => {
   return "rf-chip";
 };
 
-export function CategoryChip({
+export function TopicChip({
   name,
   linked = true,
 }: {
   name: string;
   linked?: boolean;
 }) {
-  const slug = categorySlugFromName(name);
+  const slug = topicSlugFromName(name);
   const className = chipClass(name);
   if (!linked) return <span className={className}>{name}</span>;
   return (
-    <Link href={`/category/${slug}/`} className={`${className} no-underline hover:opacity-80`}>
+    <Link href={`/topics/${slug}/`} className={`${className} no-underline hover:opacity-80`}>
       {name}
     </Link>
   );

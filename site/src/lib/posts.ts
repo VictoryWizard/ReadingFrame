@@ -8,9 +8,18 @@ import type { Post, PostFrontmatter } from "./types";
 
 const postsDirectory = path.join(process.cwd(), "content/posts");
 
+function normalizeFrontmatter(data: Record<string, unknown>): PostFrontmatter {
+  const topics =
+    (data.topics as string[] | undefined) ??
+    (data.categories as string[] | undefined) ??
+    [];
+  return { ...(data as PostFrontmatter), topics };
+}
+
 function toPost(data: ReturnType<typeof matter>): Post {
+  const fm = normalizeFrontmatter(data.data as Record<string, unknown>);
   return {
-    ...(data.data as PostFrontmatter),
+    ...fm,
     content: data.content,
   };
 }
@@ -64,14 +73,14 @@ export function getRelatedPosts(slug: string): Post[] {
     .filter((p): p is Post => Boolean(p));
 }
 
-export function getPostsByCategory(categoryName: string): Post[] {
+export function getPostsByTopic(topicName: string): Post[] {
   return getAllPosts().filter((p) =>
-    p.categories.some((c) => c.toLowerCase() === categoryName.toLowerCase())
+    p.topics.some((t) => t.toLowerCase() === topicName.toLowerCase())
   );
 }
 
-export function getAllCategoriesFromPosts(): string[] {
+export function getAllTopicsFromPosts(): string[] {
   const set = new Set<string>();
-  getAllPosts().forEach((p) => p.categories.forEach((c) => set.add(c)));
+  getAllPosts().forEach((p) => p.topics.forEach((t) => set.add(t)));
   return [...set].sort();
 }

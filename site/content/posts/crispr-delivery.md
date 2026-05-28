@@ -4,7 +4,7 @@ slug: crispr-delivery
 date: 2025-09-24
 excerpt: "The hardest part of gene editing isn't the editing; it's getting the tools into the right cells. A new method triples efficiency."
 image: "/images/crispr-delivery.svg"
-categories:
+topics:
   - "CRISPR"
   - "Gene Therapy"
   - "Drug Delivery"

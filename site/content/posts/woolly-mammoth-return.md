@@ -4,7 +4,7 @@ slug: woolly-mammoth-return
 date: 2025-03-16
 excerpt: "Colossal Biosciences created mice with mammoth-like fur. It's a proof of concept for de-extinction, and it raises real questions about whether we should."
 image: "/images/woolly-mammoth-return.svg"
-categories:
+topics:
   - "De-Extinction"
   - "Gene Editing"
   - "Colossal Biosciences"

@@ -1,0 +1,11 @@
+query {
+  repository(owner: "VictoryWizard", name: "ReadingFrame") {
+    id
+    discussionCategories(first: 10) {
+      nodes {
+        id
+        name
+      }
+    }
+  }
+}

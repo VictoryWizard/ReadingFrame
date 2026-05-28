@@ -1,11 +1,12 @@
 import { ArchiveTimeline } from "@/components/ArchiveTimeline";
 import { PostFilters } from "@/components/PostFilters";
-import { getAllPosts, getAllCategoriesFromPosts } from "@/lib/posts";
+import { getAllPosts, getAllTopicsFromPosts } from "@/lib/posts";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "All Posts",
-  description: "Browse monthly Bio and AI research breakdowns from ReadingFrame.",
+  description: "Browse monthly bio/AI research breakdowns from ReadingFrame.",
+  alternates: { canonical: "https://reading-frame.com/posts/" },
 };
 
 export default function PostsPage() {
@@ -20,13 +21,13 @@ export default function PostsPage() {
           </span>
           <h1 className="mt-2 text-3xl font-semibold md:text-4xl">All Posts</h1>
           <p className="mt-2 max-w-xl text-[var(--rf-text-muted)]">
-            One topic a month. Filter by category or browse the timeline of monthly cadence.
+            One topic per month. Filter by topic or browse the monthly timeline.
           </p>
         </div>
       </header>
 
       <div className="rf-container py-12">
-        <PostFilters posts={posts} allCategories={getAllCategoriesFromPosts()} />
+        <PostFilters posts={posts} allTopics={getAllTopicsFromPosts()} />
       </div>
 
       <section className="border-t border-[var(--rf-border)] bg-[var(--rf-bg-muted)] py-12">

@@ -12,7 +12,7 @@ export function AuthorSpotlight() {
           <div className="relative mx-auto h-36 w-36 shrink-0 overflow-hidden rounded-full ring-4 ring-[color-mix(in_srgb,var(--rf-accent)_30%,transparent)]">
             <Image
               src={author.portrait}
-              alt={`Portrait of ${author.name}`}
+              alt={author.portraitAlt ?? `Portrait of ${author.name}`}
               fill
               className="object-cover"
             />

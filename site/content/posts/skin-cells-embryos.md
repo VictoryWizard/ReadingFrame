@@ -4,7 +4,7 @@ slug: skin-cells-embryos
 date: 2025-09-30
 excerpt: "Scientists created embryos from ordinary skin cells. The science is real, but the ethical questions are just getting started."
 image: "/images/skin-cells-embryos.svg"
-categories:
+topics:
   - "Embryology"
   - "Stem Cells"
   - "Reproductive Tech"

@@ -1,8 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { formatMonthYear } from "@/lib/dates";
+import { defaultImageAlt } from "@/lib/post-display";
 import type { Post } from "@/lib/types";
-import { CategoryChip } from "./CategoryChip";
+import { TopicChip } from "./TopicChip";
 
 export function PostCard({ post }: { post: Post }) {
   return (
@@ -11,8 +12,9 @@ export function PostCard({ post }: { post: Post }) {
         <div className="relative aspect-[16/9] overflow-hidden bg-[var(--rf-bg-muted)]">
           <Image
             src={post.image}
-            alt=""
+            alt={defaultImageAlt(post)}
             fill
+            loading="lazy"
             className="object-cover transition duration-300 group-hover:scale-[1.03]"
             sizes="(max-width: 768px) 100vw, 33vw"
           />
@@ -22,8 +24,8 @@ export function PostCard({ post }: { post: Post }) {
         </div>
         <div className="p-5">
           <div className="mb-3 flex flex-wrap gap-1.5">
-            {post.categories.slice(0, 3).map((c) => (
-              <CategoryChip key={c} name={c} />
+            {post.topics.slice(0, 3).map((t) => (
+              <TopicChip key={t} name={t} />
             ))}
           </div>
           <h2 className="mb-2 text-xl font-semibold text-[var(--rf-text)] group-hover:text-[var(--rf-accent)]">

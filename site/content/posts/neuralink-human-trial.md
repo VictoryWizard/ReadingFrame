@@ -4,7 +4,7 @@ slug: neuralink-human-trial
 date: 2025-07-27
 excerpt: "A paralyzed man controlled a computer cursor with his thoughts. Real progress, and real questions about where brain-computer interfaces go from here."
 image: "/images/neuralink-human-trial.svg"
-categories:
+topics:
   - "Neuralink"
   - "BCI"
   - "Neuroscience"

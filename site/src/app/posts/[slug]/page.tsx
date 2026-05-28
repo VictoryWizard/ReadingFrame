@@ -9,14 +9,15 @@ import {
   getAdjacentPosts,
   getRelatedPosts,
 } from "@/lib/posts";
+import { defaultImageAlt } from "@/lib/post-display";
 import { formatPostDate } from "@/lib/dates";
 import { getSiteConfig } from "@/lib/site";
-import { CategoryChip } from "@/components/CategoryChip";
+import { TopicChip } from "@/components/TopicChip";
 import { ReadingProgress } from "@/components/post/ReadingProgress";
 import { PostSidebar } from "@/components/post/PostSidebar";
 import { ShareBar } from "@/components/post/ShareBar";
 import { RelatedPosts } from "@/components/post/RelatedPosts";
-import { GiscusComments } from "@/components/post/GiscusComments";
+import { Comments } from "@/components/post/Comments";
 import { TopicPoll } from "@/components/post/TopicPoll";
 import { NewsletterForm } from "@/components/NewsletterForm";
 
@@ -41,7 +42,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: "article",
       publishedTime: post.date,
       url,
-      images: [{ url: post.image }],
+      images: [{ url: post.image, alt: defaultImageAlt(post) }],
     },
   };
 }
@@ -57,6 +58,7 @@ export default async function PostPage({ params }: Props) {
   const { author } = getSiteConfig();
   const url = `https://reading-frame.com/posts/${slug}/`;
   const readMin = post.readingMinutes ?? 8;
+  const imgAlt = defaultImageAlt(post);
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -64,12 +66,11 @@ export default async function PostPage({ params }: Props) {
     headline: post.title,
     description: post.excerpt,
     datePublished: post.date,
-    author: {
-      "@type": "Person",
-      name: author.name,
-    },
+    author: { "@type": "Person", name: author.name },
     image: `https://reading-frame.com${post.image}`,
     url,
+    keywords: post.topics.join(", "),
+    timeRequired: `PT${readMin}M`,
   };
 
   return (
@@ -83,10 +84,16 @@ export default async function PostPage({ params }: Props) {
       <article>
         <header className="relative border-b border-[var(--rf-border)]">
           <div className="relative h-48 md:h-64">
-            <Image src={post.image} alt="" fill className="object-cover opacity-90" priority />
+            <Image
+              src={post.image}
+              alt={imgAlt}
+              fill
+              priority
+              className="object-cover opacity-90"
+            />
             <div className="absolute inset-0 bg-gradient-to-t from-[var(--rf-bg)] to-transparent" />
           </div>
-          <div className="rf-container -mt-16 relative pb-8">
+          <div className="rf-container relative -mt-16 pb-8">
             <Link
               href="/posts/"
               className="text-sm text-[var(--rf-accent)] no-underline hover:underline"
@@ -94,8 +101,8 @@ export default async function PostPage({ params }: Props) {
               ← All posts
             </Link>
             <div className="mt-4 flex flex-wrap gap-2">
-              {post.categories.map((c) => (
-                <CategoryChip key={c} name={c} />
+              {post.topics.map((t) => (
+                <TopicChip key={t} name={t} />
               ))}
             </div>
             <h1 className="mt-4 max-w-3xl text-3xl font-semibold md:text-4xl">{post.title}</h1>
@@ -150,10 +157,9 @@ export default async function PostPage({ params }: Props) {
             </section>
 
             <RelatedPosts posts={related} />
+            <Comments />
 
-            <GiscusComments />
-
-            <nav className="mt-12 flex flex-wrap justify-between gap-4 border-t border-[var(--rf-border)] pt-8">
+            <nav className="mt-12 flex flex-wrap justify-between gap-4 border-t border-[var(--rf-border)] pt-8" aria-label="Post navigation">
               {prev ? (
                 <Link href={`/posts/${prev.slug}/`} className="rf-btn rf-btn-ghost text-sm">
                   ← {prev.title.slice(0, 40)}

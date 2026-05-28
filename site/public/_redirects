@@ -1,0 +1,9 @@
+/post/:slug.html /posts/:slug/ 301
+/post/:slug /posts/:slug/ 301
+/posts.html /posts/ 301
+/about.html /about/ 301
+/index.html / 301
+/category/:slug /topics/:slug/ 301
+/category/:slug/ /topics/:slug/ 301
+/categories /topics/ 301
+/categories/ /topics/ 301

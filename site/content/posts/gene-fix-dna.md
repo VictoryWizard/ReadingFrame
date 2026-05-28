@@ -2,9 +2,9 @@
 title: "Gene Fix: Biotech's Quiet Revolution in Human DNA"
 slug: gene-fix-dna
 date: 2025-05-22
-excerpt: "CRISPR therapies are now editing genes in real patients. The FDA approved the first one. What actually changes, and what doesn't."
+excerpt: "CRISPR therapies are now editing genes in real patients. The FDA approved the first one. What actually changes and what doesn't."
 image: "/images/gene-fix-dna.svg"
-categories:
+topics:
   - "CRISPR"
   - "Gene Editing"
   - "Sickle Cell"
