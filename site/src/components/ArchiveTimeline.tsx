@@ -4,11 +4,11 @@ import type { Post } from "@/lib/types";
 
 export function ArchiveTimeline({ posts }: { posts: Post[] }) {
   return (
-    <ol className="relative border-l-2 border-[var(--rf-border)] pl-6">
+    <ol className="timeline-list relative list-none border-l-2 border-[var(--rf-border)] pl-6">
       {posts.map((p) => (
-        <li key={p.slug} className="fade-in mb-8 last:mb-0">
+        <li key={p.slug} className="timeline-item relative mb-8 list-none last:mb-0">
           <span
-            className="absolute -left-[7px] mt-1.5 h-3 w-3 rounded-full bg-[var(--rf-accent)]"
+            className="timeline-dot absolute left-0 top-2 h-3 w-3 -translate-x-[calc(50%+1px)] rounded-full bg-[var(--rf-accent)]"
             aria-hidden="true"
           />
           <time className="text-xs font-semibold uppercase tracking-wider text-[var(--rf-text-muted)]">

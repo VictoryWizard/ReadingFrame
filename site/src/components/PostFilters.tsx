@@ -4,10 +4,7 @@ import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { PostCard } from "./PostCard";
 import type { Post } from "@/lib/types";
 import { revealFadeInElements } from "@/lib/fade-in";
-
-function normalizeTopic(value: string): string {
-  return value.trim().toLowerCase();
-}
+import { normalizeTopic, sanitizeTopics } from "@/lib/topics";
 
 function postMatchesTopic(post: Post, selectedTopic: string): boolean {
   const target = normalizeTopic(selectedTopic);
@@ -15,9 +12,7 @@ function postMatchesTopic(post: Post, selectedTopic: string): boolean {
 }
 
 function topicsFromPosts(posts: Post[]): string[] {
-  const set = new Set<string>();
-  posts.forEach((p) => p.topics.forEach((t) => set.add(t)));
-  return [...set].sort((a, b) => a.localeCompare(b));
+  return sanitizeTopics(posts.flatMap((p) => p.topics));
 }
 
 export function PostFilters({
@@ -32,14 +27,10 @@ export function PostFilters({
   const resultsRef = useRef<HTMLDivElement>(null);
 
   const topicOptions = useMemo(() => {
-    const fromPosts = topicsFromPosts(posts);
-    if (!allTopics?.length) return fromPosts;
-    const inPosts = new Set(fromPosts.map(normalizeTopic));
-    const merged = [...fromPosts];
-    for (const t of allTopics) {
-      if (!inPosts.has(normalizeTopic(t))) merged.push(t);
-    }
-    return merged.sort((a, b) => a.localeCompare(b));
+    const merged = allTopics?.length
+      ? sanitizeTopics([...topicsFromPosts(posts), ...allTopics])
+      : topicsFromPosts(posts);
+    return merged.filter((t) => posts.some((p) => postMatchesTopic(p, t)));
   }, [posts, allTopics]);
 
   const filtered = useMemo(() => {
@@ -71,68 +62,65 @@ export function PostFilters({
     return `Showing ${filtered.length} ${filtered.length === 1 ? "post" : "posts"}${topicPart}${searchPart}.`;
   }, [filtered.length, topic, query]);
 
-  const selectTopic = (next: string | "all") => {
-    setTopic(next);
-  };
+  useLayoutEffect(() => {
+    if (topic !== "all" && !topicOptions.includes(topic)) {
+      setTopic("all");
+    }
+  }, [topic, topicOptions]);
 
   useLayoutEffect(() => {
-    if (!resultsRef.current) return;
-    resultsRef.current.querySelectorAll(".fade-in").forEach((el) => {
+    resultsRef.current?.querySelectorAll(".fade-in").forEach((el) => {
       el.classList.add("visible");
     });
   }, [filtered, topic, query]);
 
   useEffect(() => {
-    if (!resultsRef.current) return;
-    revealFadeInElements(resultsRef.current);
+    if (resultsRef.current) revealFadeInElements(resultsRef.current);
   }, [filtered]);
-
-  const topicHasPosts = (name: string) => posts.some((p) => postMatchesTopic(p, name));
 
   return (
     <div>
       <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-        <label className="flex-1">
+        <label className="min-w-0 flex-1">
           <span className="sr-only">Filter by title or summary</span>
           <input
             type="search"
             placeholder="Filter by title or summary…"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            className="w-full rounded-full border border-[var(--rf-border)] bg-[var(--rf-bg-elevated)] px-4 py-2.5 text-sm outline-none focus:border-[var(--rf-accent)]"
+            className="topic-filter-search w-full rounded-full border border-[var(--rf-border)] bg-[var(--rf-bg-elevated)] px-4 py-2.5 text-sm outline-none focus:border-[var(--rf-accent)] focus-visible:ring-2 focus-visible:ring-[var(--rf-accent)] focus-visible:ring-offset-2"
             aria-label="Filter by title or summary"
           />
         </label>
-        <div className="flex flex-wrap gap-2" role="group" aria-label="Filter by topic">
+        <div
+          className="topic-filter-bar flex min-w-0 flex-wrap items-center gap-2"
+          role="toolbar"
+          aria-label="Filter by topic"
+        >
           <button
             type="button"
-            onClick={() => selectTopic("all")}
+            onClick={() => setTopic("all")}
             aria-pressed={topic === "all"}
-            className={`rounded-full px-3 py-1 text-xs font-semibold transition ${
+            className={`topic-filter-pill rounded-full px-3 py-1 text-xs font-semibold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--rf-accent)] focus-visible:ring-offset-2 ${
               topic === "all"
                 ? "bg-[var(--rf-accent)] text-white"
                 : "border border-[var(--rf-border)] text-[var(--rf-text-muted)] hover:border-[var(--rf-accent)]"
             }`}
           >
-            All topics
+            All
           </button>
           {topicOptions.map((t) => {
             const isActive = topic === t;
-            const disabled = !topicHasPosts(t);
             return (
               <button
                 key={t}
                 type="button"
-                onClick={() => selectTopic(t)}
+                onClick={() => setTopic(t)}
                 aria-pressed={isActive}
-                disabled={disabled}
-                title={disabled ? "No posts in this list with this topic" : undefined}
-                className={`rounded-full border px-3 py-1 text-xs font-semibold uppercase tracking-wide transition ${
+                className={`topic-filter-pill rounded-full border px-3 py-1 text-xs font-semibold uppercase tracking-wide transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--rf-accent)] focus-visible:ring-offset-2 ${
                   isActive
-                    ? "border-[var(--rf-accent)] bg-[color-mix(in_srgb,var(--rf-accent)_15%,transparent)] text-[var(--rf-accent)] ring-2 ring-[var(--rf-accent)]"
-                    : disabled
-                      ? "cursor-not-allowed border-[var(--rf-border)] text-[var(--rf-text-muted)] opacity-40"
-                      : "border-[var(--rf-border)] text-[var(--rf-text-muted)] hover:border-[var(--rf-accent)]"
+                    ? "border-[var(--rf-accent)] bg-[color-mix(in_srgb,var(--rf-accent)_15%,transparent)] text-[var(--rf-accent)]"
+                    : "border-[var(--rf-border)] text-[var(--rf-text-muted)] hover:border-[var(--rf-accent)]"
                 }`}
               >
                 {t}
@@ -155,18 +143,17 @@ export function PostFilters({
             No posts match this topic or search.
           </p>
         ) : (
-          <ul
+          <section
             key={`${topic}-${query}`}
-            className="grid list-none gap-6 p-0 sm:grid-cols-2 lg:grid-cols-3"
-            role="list"
+            className="post-results-grid grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
             aria-label="Filtered posts"
           >
             {filtered.map((p) => (
-              <li key={p.slug} className="list-none">
+              <div key={p.slug}>
                 <PostCard post={p} animate={false} />
-              </li>
+              </div>
             ))}
-          </ul>
+          </section>
         )}
       </div>
     </div>

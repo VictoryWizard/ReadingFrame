@@ -5,15 +5,16 @@ import { remark } from "remark";
 import remarkGfm from "remark-gfm";
 import remarkHtml from "remark-html";
 import type { Post, PostFrontmatter } from "./types";
+import { sanitizeTopics } from "./topics";
 
 const postsDirectory = path.join(process.cwd(), "content/posts");
 
 function normalizeFrontmatter(data: Record<string, unknown>): PostFrontmatter {
-  const topics =
-    (data.topics as string[] | undefined) ??
-    (data.categories as string[] | undefined) ??
+  const raw =
+    (data.topics as unknown) ??
+    (data.categories as unknown) ??
     [];
-  return { ...(data as PostFrontmatter), topics };
+  return { ...(data as PostFrontmatter), topics: sanitizeTopics(raw) };
 }
 
 function toPost(data: ReturnType<typeof matter>): Post {
@@ -80,7 +81,5 @@ export function getPostsByTopic(topicName: string): Post[] {
 }
 
 export function getAllTopicsFromPosts(): string[] {
-  const set = new Set<string>();
-  getAllPosts().forEach((p) => p.topics.forEach((t) => set.add(t)));
-  return [...set].sort();
+  return sanitizeTopics(getAllPosts().flatMap((p) => p.topics));
 }

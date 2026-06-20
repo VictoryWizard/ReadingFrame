@@ -95,6 +95,14 @@ h4 {
   margin-inline: auto;
 }
 
+.hero-section {
+  background-color: #0c4a6e;
+  background-image: url("/images/hero-dna-network.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .rf-btn {
   display: inline-flex;
   align-items: center;
@@ -219,9 +227,68 @@ h4 {
   transform: none;
 }
 
+/* Avoid global focus ring on custom controls (prevents empty-looking ovals on pills) */
 :focus-visible {
   outline: 2px solid var(--rf-accent);
   outline-offset: 2px;
+}
+
+.topic-filter-search {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.topic-filter-search::-webkit-search-decoration,
+.topic-filter-search::-webkit-search-cancel-button,
+.topic-filter-search::-webkit-search-results-button {
+  -webkit-appearance: none;
+  appearance: none;
+  display: none;
+}
+
+.topic-filter-bar,
+.topic-filter-bar * {
+  list-style: none;
+}
+
+.topic-filter-bar::before,
+.topic-filter-bar::after,
+.topic-filter-pill::before,
+.topic-filter-pill::after {
+  content: none !important;
+  display: none !important;
+}
+
+.topic-filter-pill:empty {
+  display: none !important;
+}
+
+/* role=list on divs can paint stray bullets in WebKit — suppress globally */
+[role="list"],
+[role="listitem"] {
+  list-style: none !important;
+}
+
+[role="list"]::marker,
+[role="listitem"]::marker {
+  content: none !important;
+  display: none !important;
+}
+
+.post-results-grid,
+.post-results-grid > * {
+  list-style: none !important;
+}
+
+.timeline-list,
+.timeline-item {
+  list-style: none !important;
+}
+
+.timeline-list::marker,
+.timeline-item::marker {
+  content: none !important;
+  display: none !important;
 }
 
 .sr-only {
