@@ -1,9 +1,7 @@
 "use client";
 
-import type { Post } from "@/lib/types";
-
-export function ShareBar({ post, url }: { post: Post; url: string }) {
-  const text = encodeURIComponent(post.title);
+export function ShareBar({ title, url }: { title: string; url: string }) {
+  const text = encodeURIComponent(title);
   const shareUrl = encodeURIComponent(url);
 
   const copyLink = () => {

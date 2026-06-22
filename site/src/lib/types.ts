@@ -4,6 +4,8 @@ export type PostFrontmatter = {
   title: string;
   slug: string;
   date: string;
+  /** Optional last-updated date (ISO). Falls back to `date` when absent. */
+  updated?: string;
   excerpt: string;
   image: string;
   imageAlt?: string;

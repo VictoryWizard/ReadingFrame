@@ -13,18 +13,21 @@ export function SiteFooter() {
           <p className="text-sm text-[var(--rf-text-muted)]">
             © {new Date().getFullYear()} ReadingFrame · reading-frame.com
           </p>
+          <p className="text-sm text-[var(--rf-text-muted)]">Based in Bentonville, Arkansas</p>
         </div>
         <nav className="flex flex-wrap gap-4 text-sm" aria-label="Footer">
-          <a href={social.github} target="_blank" rel="noopener noreferrer">
+          {/* rel="me" links these profiles back to the site for identity verification (IndieAuth / rel-me). */}
+          <a href={social.github} target="_blank" rel="me noopener noreferrer">
             GitHub
           </a>
-          <a href={social.instagram} target="_blank" rel="noopener noreferrer">
+          <a href={social.instagram} target="_blank" rel="me noopener noreferrer">
             Instagram
           </a>
-          <a href={social.linkedin} target="_blank" rel="noopener noreferrer">
+          <a href={social.linkedin} target="_blank" rel="me noopener noreferrer">
             LinkedIn
           </a>
-          <a href={`mailto:${social.email}`}>{social.email}</a>
+          <Link href="/topics/">Topics</Link>
+          <Link href="/resources/">Resources</Link>
           <Link href="/about/">About</Link>
           <Link href="/contact/">Contact</Link>
         </nav>

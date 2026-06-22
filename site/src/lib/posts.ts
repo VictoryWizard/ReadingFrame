@@ -9,6 +9,45 @@ import { sanitizeTopics } from "./topics";
 
 const postsDirectory = path.join(process.cwd(), "content/posts");
 
+const HEADING_ID_RE = /\s*\{#([A-Za-z0-9_-]+)\}\s*$/;
+
+type MdastNode = {
+  type: string;
+  value?: string;
+  children?: MdastNode[];
+  data?: { hProperties?: Record<string, unknown> };
+};
+
+/**
+ * Honors Markdown `## Heading {#custom-id}` syntax, which `remark-html` does
+ * not support on its own. Without this, the `{#id}` text rendered literally
+ * inside the heading and no `id` attribute was emitted — breaking both the
+ * heading text and the in-page table-of-contents anchor links.
+ *
+ * For each heading we pull the trailing `{#id}`, strip it from the text, and
+ * attach it as an `id` via `data.hProperties` (which mdast-util-to-hast, used
+ * by remark-html, copies onto the element).
+ */
+function remarkHeadingIds() {
+  return (tree: unknown) => {
+    const visit = (node: MdastNode) => {
+      if (node.type === "heading" && node.children?.length) {
+        const last = node.children[node.children.length - 1];
+        if (last.type === "text" && typeof last.value === "string") {
+          const match = last.value.match(HEADING_ID_RE);
+          if (match) {
+            last.value = last.value.replace(HEADING_ID_RE, "");
+            node.data = node.data ?? {};
+            node.data.hProperties = { ...node.data.hProperties, id: match[1] };
+          }
+        }
+      }
+      node.children?.forEach(visit);
+    };
+    visit(tree as MdastNode);
+  };
+}
+
 function normalizeFrontmatter(data: Record<string, unknown>): PostFrontmatter {
   const raw =
     (data.topics as unknown) ??
@@ -48,7 +87,15 @@ export function getPostBySlug(slug: string): Post | null {
 }
 
 export async function markdownToHtml(markdown: string): Promise<string> {
-  const result = await remark().use(remarkGfm).use(remarkHtml).process(markdown);
+  // sanitize:false — post content is fully author-authored and version-controlled
+  // (no untrusted user input), so HTML sanitization adds no security here. It was
+  // also rewriting our heading ids to `user-content-*`, which broke the in-page
+  // table-of-contents anchor links.
+  const result = await remark()
+    .use(remarkGfm)
+    .use(remarkHeadingIds)
+    .use(remarkHtml, { sanitize: false })
+    .process(markdown);
   return result.toString();
 }
 

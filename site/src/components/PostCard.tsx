@@ -8,9 +8,12 @@ import { TopicChip } from "./TopicChip";
 export function PostCard({
   post,
   animate = true,
+  titleAs: TitleTag = "h3",
 }: {
   post: Post;
   animate?: boolean;
+  /** Heading level for the card title, chosen to fit the surrounding outline. */
+  titleAs?: "h2" | "h3";
 }) {
   return (
     <article
@@ -36,9 +39,9 @@ export function PostCard({
               <TopicChip key={t} name={t} />
             ))}
           </div>
-          <h2 className="mb-2 text-xl font-semibold text-[var(--rf-text)] group-hover:text-[var(--rf-accent)]">
+          <TitleTag className="mb-2 text-xl font-semibold text-[var(--rf-text)] group-hover:text-[var(--rf-accent)]">
             {post.title}
-          </h2>
+          </TitleTag>
           <p className="mb-4 line-clamp-3 text-sm text-[var(--rf-text-muted)]">
             {post.excerpt}
           </p>

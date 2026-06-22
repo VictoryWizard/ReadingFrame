@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { getSiteConfig } from "@/lib/site";
+import { getSiteConfig, encodeEmail } from "@/lib/site";
+import { ObfuscatedEmail } from "@/components/ObfuscatedEmail";
 
 export function AuthorSpotlight() {
   const { author, social } = getSiteConfig();
@@ -38,7 +39,7 @@ export function AuthorSpotlight() {
               <a
                 href={social.github}
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="me noopener noreferrer"
                 className="rf-btn rf-btn-ghost text-sm"
                 aria-label="GitHub"
               >
@@ -47,7 +48,7 @@ export function AuthorSpotlight() {
               <a
                 href={social.instagram}
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="me noopener noreferrer"
                 className="rf-btn rf-btn-ghost text-sm"
                 aria-label="Instagram"
               >
@@ -56,15 +57,17 @@ export function AuthorSpotlight() {
               <a
                 href={social.linkedin}
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="me noopener noreferrer"
                 className="rf-btn rf-btn-ghost text-sm"
                 aria-label="LinkedIn"
               >
                 LinkedIn
               </a>
-              <a href={`mailto:${social.email}`} className="rf-btn rf-btn-ghost text-sm">
-                Email
-              </a>
+              <ObfuscatedEmail
+                data={encodeEmail(social.email)}
+                label="Email"
+                className="rf-btn rf-btn-ghost text-sm"
+              />
               <Link href="/about/" className="rf-btn rf-btn-primary text-sm">
                 Full bio →
               </Link>

@@ -4,9 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "node scripts/build-search.mjs && node scripts/generate-redirects.mjs",
+    "prebuild": "node scripts/build-search.mjs && node scripts/generate-redirects.mjs && node scripts/generate-llms.mjs",
     "build": "next build",
     "start": "next start",
+    "og": "node scripts/generate-og-images.mjs",
     "lint": "eslint"
   },
   "dependencies": {
@@ -26,6 +27,9 @@
     "unified": "^11.0.5"
   },
   "devDependencies": {
+    "@fontsource/fraunces": "^5.2.9",
+    "@fontsource/source-sans-3": "^5.2.9",
+    "@resvg/resvg-js": "^2.6.2",
     "@tailwindcss/postcss": "^4",
     "@types/lunr": "^2.3.7",
     "@types/node": "^20",
@@ -33,6 +37,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.6",
+    "satori": "^0.26.0",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

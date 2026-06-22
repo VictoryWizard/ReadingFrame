@@ -1,8 +1,9 @@
 {
   "name": "ReadingFrame",
-  "brandLine": "Bio/AI research breakdowns",
+  "brandLine": "Monthly Biotech & AI Research Breakdowns",
   "tagline": "One breakthrough. Every month. Decoded.",
   "mission": "Monthly, hype-free breakdowns of biotech and AI research — methods, limitations, and what findings actually mean — from a high school researcher in Bentonville, Arkansas.",
+  "seoDescription": "Hype-free monthly breakdowns of biotech and AI research — methods, limitations, and what findings actually mean. By Heram Nagabhairu.",
   "author": {
     "name": "Heram Nagabhairu",
     "role": "Student researcher · Bentonville, AR",
@@ -23,6 +24,7 @@
     "github": "https://github.com/VictoryWizard",
     "instagram": "https://www.instagram.com/heram.nagabhairu/",
     "linkedin": "https://www.linkedin.com/in/heramn/",
+    "x": "",
     "email": "nheram9@gmail.com"
   },
   "forms": {
@@ -58,7 +60,9 @@
     }
   ],
   "analytics": {
-    "plausibleDomain": ""
+    "plausibleDomain": "",
+    "ga4Id": "",
+    "googleSiteVerification": ""
   },
   "comments": {
     "provider": "utterances",

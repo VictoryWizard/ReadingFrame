@@ -19,7 +19,7 @@ const items = fs
       excerpt: data.excerpt,
       date: data.date,
       topics,
-      body: content.slice(0, 2000),
+      body: content.replace(/\{#[A-Za-z0-9_-]+\}/g, "").slice(0, 2000),
     };
   })
   .sort((a, b) => (a.date < b.date ? 1 : -1));

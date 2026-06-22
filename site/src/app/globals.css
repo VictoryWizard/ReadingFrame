@@ -171,6 +171,26 @@ h4 {
   font-size: 1.5rem;
 }
 
+.prose-rf h3 {
+  margin-top: 1.75rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.prose-rf h4 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--rf-text-muted);
+}
+
+/* Offset in-page anchor jumps so headings aren't hidden under the fixed nav. */
+.prose-rf :is(h2, h3, h4)[id] {
+  scroll-margin-top: calc(var(--rf-nav-h) + 1rem);
+}
+
 .prose-rf p {
   margin-bottom: 1rem;
   color: var(--rf-text);

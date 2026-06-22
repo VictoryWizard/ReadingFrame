@@ -1,0 +1,41 @@
+# ReadingFrame
+
+> Hype-free monthly breakdowns of biotech and AI research — methods, limitations, and what findings actually mean. By Heram Nagabhairu.
+
+ReadingFrame is an independent research blog by Heram Nagabhairu, a high school researcher in Bentonville, Arkansas. Each post breaks down a single biotech or AI development — the methods, the limitations, and what the finding actually means — without the press-release layer.
+
+## About
+- Author: Heram Nagabhairu — Student researcher · Bentonville, AR
+- Location: Bentonville, Arkansas, USA
+- Focus areas: Cancer biology & AI, Graph neural networks, Gene expression analysis, Drug resistance prediction, Bioinformatics pipelines
+- Cadence: one post per month
+- Format: one paper or development per post; methods, limitations, and real significance
+- Independent and ad-free: no ads, no affiliate links, no sponsored content
+
+## Topics
+- Biotech: Gene editing, therapeutics, and the systems that move discoveries from lab to clinic. (https://reading-frame.com/topics/biotech/)
+- CRISPR: Delivery, safety, and clinical translation of programmable genome editing. (https://reading-frame.com/topics/crispr/)
+- AI & ML: Machine learning in drug discovery, biomedicine, and biological data analysis. (https://reading-frame.com/topics/ai/)
+- Neuroscience: Brain-computer interfaces and neural technology with real trial data. (https://reading-frame.com/topics/neuroscience/)
+- De-extinction: Engineered organisms, conservation claims, and what the science actually shows. (https://reading-frame.com/topics/de-extinction/)
+
+## Posts (newest first)
+- [Biotech 2026: What Comes After a Breakthrough Year](https://reading-frame.com/posts/biotech-2026/) — Wed Dec 31 2025 18:00:00 GMT-0600 (Central Standard Time) — 2025 was not just another productive year for biotech. Multiple technologies reached new levels of practical impact. Here is what comes next.
+- [A New Era: Starting Life From Skin Cells](https://reading-frame.com/posts/skin-cells-embryos/) — Mon Sep 29 2025 19:00:00 GMT-0500 (Central Daylight Time) — Scientists created embryos from ordinary skin cells. The science is real, but the ethical questions are just getting started.
+- [A Breakthrough in CRISPR Delivery](https://reading-frame.com/posts/crispr-delivery/) — Tue Sep 23 2025 19:00:00 GMT-0500 (Central Daylight Time) — The hardest part of gene editing isn't the editing; it's getting the tools into the right cells. A new method triples efficiency.
+- [When the Earth Tears: Capturing Fault Lines in Motion](https://reading-frame.com/posts/fault-lines-motion/) — Tue Sep 02 2025 19:00:00 GMT-0500 (Central Daylight Time) — For the first time, researchers recorded high-speed video of the Earth's surface splitting apart during an earthquake. It's more than dramatic footage. It's data we've never had before.
+- [Neuralink's First Human Trial: A Mind-Controlled Future Begins](https://reading-frame.com/posts/neuralink-human-trial/) — Sat Jul 26 2025 19:00:00 GMT-0500 (Central Daylight Time) — A paralyzed man controlled a computer cursor with his thoughts. Real progress, and real questions about where brain-computer interfaces go from here.
+- [Gene Fix: Biotech's Quiet Revolution in Human DNA](https://reading-frame.com/posts/gene-fix-dna/) — Wed May 21 2025 19:00:00 GMT-0500 (Central Daylight Time) — CRISPR therapies are now editing genes in real patients. The FDA approved the first one. What actually changes and what doesn't.
+- [Dire Wolves Return: Colossal's Next Big Leap After the Woolly Mice](https://reading-frame.com/posts/dire-wolves-colossal/) — Thu Apr 17 2025 19:00:00 GMT-0500 (Central Daylight Time) — Three wolf pups engineered to resemble extinct dire wolves. The biotech is impressive, but the "de-extinction" label deserves scrutiny.
+- [The Return of the Woolly Mammoth](https://reading-frame.com/posts/woolly-mammoth-return/) — Sat Mar 15 2025 19:00:00 GMT-0500 (Central Daylight Time) — Colossal Biosciences created mice with mammoth-like fur. It's a proof of concept for de-extinction, and it raises real questions about whether we should.
+
+## Key pages
+- Home: https://reading-frame.com/
+- All posts: https://reading-frame.com/posts/
+- Topics: https://reading-frame.com/topics/
+- Resources: https://reading-frame.com/resources/
+- About the author: https://reading-frame.com/about/
+- Contact: https://reading-frame.com/contact/
+
+## Usage
+This content may be cited or summarized with attribution to Heram Nagabhairu / ReadingFrame and a link to the source post.

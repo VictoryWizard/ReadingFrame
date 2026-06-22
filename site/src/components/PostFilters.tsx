@@ -18,9 +18,12 @@ function topicsFromPosts(posts: Post[]): string[] {
 export function PostFilters({
   posts,
   allTopics,
+  cardTitleAs = "h2",
 }: {
   posts: Post[];
   allTopics?: string[];
+  /** Heading level for each result card's title (depends on page outline). */
+  cardTitleAs?: "h2" | "h3";
 }) {
   const [query, setQuery] = useState("");
   const [topic, setTopic] = useState<string | "all">("all");
@@ -150,7 +153,7 @@ export function PostFilters({
           >
             {filtered.map((p) => (
               <div key={p.slug}>
-                <PostCard post={p} animate={false} />
+                <PostCard post={p} animate={false} titleAs={cardTitleAs} />
               </div>
             ))}
           </section>

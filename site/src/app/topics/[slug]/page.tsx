@@ -48,7 +48,7 @@ export default async function TopicPage({ params }: Props) {
         ) : (
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {posts.map((p) => (
-              <PostCard key={p.slug} post={p} />
+              <PostCard key={p.slug} post={p} titleAs="h2" />
             ))}
           </div>
         )}

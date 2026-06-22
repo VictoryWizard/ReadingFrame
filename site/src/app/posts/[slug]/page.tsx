@@ -10,8 +10,11 @@ import {
   getRelatedPosts,
 } from "@/lib/posts";
 import { defaultImageAlt } from "@/lib/post-display";
+import { postOgImagePath } from "@/lib/og";
 import { formatPostDate } from "@/lib/dates";
 import { getSiteConfig } from "@/lib/site";
+import { JsonLd } from "@/components/JsonLd";
+import { blogPostingSchema, breadcrumbSchema, SITE_URL } from "@/lib/schema";
 import { TopicChip } from "@/components/TopicChip";
 import { ReadingProgress } from "@/components/post/ReadingProgress";
 import { PostSidebar } from "@/components/post/PostSidebar";
@@ -32,6 +35,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = getPostBySlug(slug);
   if (!post) return {};
   const url = `https://reading-frame.com/posts/${slug}/`;
+  const ogImage = postOgImagePath(slug, post.image);
   return {
     title: post.title,
     description: post.excerpt,
@@ -41,8 +45,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: post.excerpt,
       type: "article",
       publishedTime: post.date,
+      modifiedTime: post.updated ?? post.date,
+      authors: ["Heram Nagabhairu"],
+      tags: post.topics,
       url,
-      images: [{ url: post.image, alt: defaultImageAlt(post) }],
+      images: [{ url: ogImage, width: 1200, height: 630, alt: defaultImageAlt(post) }],
     },
   };
 }
@@ -60,25 +67,18 @@ export default async function PostPage({ params }: Props) {
   const readMin = post.readingMinutes ?? 8;
   const imgAlt = defaultImageAlt(post);
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    headline: post.title,
-    description: post.excerpt,
-    datePublished: post.date,
-    author: { "@type": "Person", name: author.name },
-    image: `https://reading-frame.com${post.image}`,
-    url,
-    keywords: post.topics.join(", "),
-    timeRequired: `PT${readMin}M`,
-  };
+  const structuredData = [
+    blogPostingSchema(post),
+    breadcrumbSchema([
+      { name: "Home", url: `${SITE_URL}/` },
+      { name: "Posts", url: `${SITE_URL}/posts/` },
+      { name: post.title, url },
+    ]),
+  ];
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <JsonLd data={structuredData} />
       <ReadingProgress />
 
       <article>
@@ -118,14 +118,14 @@ export default async function PostPage({ params }: Props) {
           <PostSidebar toc={post.toc} takeaways={post.takeaways} />
 
           <div className="min-w-0 xl:col-start-2">
-            <ShareBar post={post} url={url} />
+            <ShareBar title={post.title} url={url} />
             <div
               id="post-content"
               className="prose-rf"
               dangerouslySetInnerHTML={{ __html: html }}
             />
             <TopicPoll topic={slug} />
-            <ShareBar post={post} url={url} />
+            <ShareBar title={post.title} url={url} />
 
             <section className="mt-10 rounded-[var(--rf-radius)] border border-[var(--rf-border)] bg-[var(--rf-bg-elevated)] p-6">
               <div className="flex gap-4">

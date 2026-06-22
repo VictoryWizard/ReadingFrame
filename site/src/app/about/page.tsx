@@ -1,23 +1,43 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { getSiteConfig } from "@/lib/site";
+import { getSiteConfig, encodeEmail } from "@/lib/site";
+import { JsonLd } from "@/components/JsonLd";
+import { ObfuscatedEmail } from "@/components/ObfuscatedEmail";
+import { personSchema, breadcrumbSchema, SITE_URL } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "About",
   description:
-    "ReadingFrame is written by a high school researcher in Arkansas interested in ML, bioinformatics, and computational biology.",
+    "ReadingFrame is written by Heram Nagabhairu, a high school researcher in Bentonville, Arkansas interested in ML, bioinformatics, and computational biology.",
+  alternates: { canonical: "https://reading-frame.com/about/" },
 };
 
 export default function AboutPage() {
   const { author, social, name } = getSiteConfig();
 
+  const structuredData = [
+    personSchema(),
+    breadcrumbSchema([
+      { name: "Home", url: `${SITE_URL}/` },
+      { name: "About", url: `${SITE_URL}/about/` },
+    ]),
+  ];
+
   return (
     <div className="rf-container py-12">
+      <JsonLd data={structuredData} />
+
       <header className="max-w-2xl">
         <span className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--rf-accent)]">
           The author
         </span>
         <h1 className="mt-2 text-3xl font-semibold md:text-4xl">About {name}</h1>
+        {/* Plain-text identity block — easy for both readers and language models
+            to extract: who, what, where, and areas of expertise. */}
+        <p className="mt-3 text-[var(--rf-text-muted)]">
+          <strong className="text-[var(--rf-text)]">{author.name}</strong> · {author.role} ·
+          writing about {author.interests.slice(0, 3).join(", ").toLowerCase()}, and more.
+        </p>
       </header>
 
       <div className="prose-rf mt-10 max-w-2xl space-y-10">
@@ -50,6 +70,25 @@ export default function AboutPage() {
               </div>
             ))}
           </div>
+          <p className="mt-4">
+            I also keep a running list of the databases, tools, and primary sources behind these
+            breakdowns on the{" "}
+            <Link href="/resources/" className="text-[var(--rf-accent)] font-semibold">
+              resources page
+            </Link>
+            .
+          </p>
+        </section>
+        <section>
+          <h2>Mentions &amp; coverage</h2>
+          <p>
+            ReadingFrame is an independent, student-run blog. It hasn&apos;t been featured in
+            outside press yet — as breakdowns get cited, linked, or covered, they&apos;ll be listed
+            here. If you&apos;ve referenced a post, I&apos;d genuinely like to know.
+          </p>
+          <p className="text-sm text-[var(--rf-text-muted)]">
+            <em>No external mentions to list yet — check back as the archive grows.</em>
+          </p>
         </section>
         <section>
           <h2>Contact</h2>
@@ -58,16 +97,26 @@ export default function AboutPage() {
             working in Bio/AI.
           </p>
           <div className="mt-4 flex flex-wrap gap-3">
-            <a href={`mailto:${social.email}`} className="rf-btn rf-btn-ghost">
-              Email →
-            </a>
-            <a href={social.github} target="_blank" rel="noopener noreferrer" className="rf-btn rf-btn-ghost">
+            <ObfuscatedEmail
+              data={encodeEmail(social.email)}
+              label="Email →"
+              className="rf-btn rf-btn-ghost"
+            />
+            <a href={social.github} target="_blank" rel="me noopener noreferrer" className="rf-btn rf-btn-ghost">
               GitHub →
+            </a>
+            <a
+              href={social.linkedin}
+              target="_blank"
+              rel="me noopener noreferrer"
+              className="rf-btn rf-btn-ghost"
+            >
+              LinkedIn →
             </a>
             <a
               href={social.instagram}
               target="_blank"
-              rel="noopener noreferrer"
+              rel="me noopener noreferrer"
               className="rf-btn rf-btn-ghost"
             >
               Instagram →

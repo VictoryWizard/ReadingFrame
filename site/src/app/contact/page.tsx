@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ContactForm } from "@/components/ContactForm";
-import { getSiteConfig } from "@/lib/site";
+import { ObfuscatedEmail } from "@/components/ObfuscatedEmail";
+import { getSiteConfig, encodeEmail } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -22,9 +23,7 @@ export default function ContactPage() {
 
       <p className="mt-6 text-sm text-[var(--rf-text-muted)]">
         Prefer email?{" "}
-        <a href={`mailto:${social.email}`} className="text-[var(--rf-accent)]">
-          {social.email}
-        </a>
+        <ObfuscatedEmail data={encodeEmail(social.email)} className="text-[var(--rf-accent)]" />
       </p>
     </div>
   );

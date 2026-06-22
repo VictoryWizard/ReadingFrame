@@ -31,7 +31,9 @@ export function ContactForm() {
     }
 
     if (!endpoint) {
-      setError("Contact form is not configured yet. Email nheram9@gmail.com directly.");
+      setError(
+        "The contact form isn't configured yet — please reach out via one of the links in the footer."
+      );
       return;
     }
 
