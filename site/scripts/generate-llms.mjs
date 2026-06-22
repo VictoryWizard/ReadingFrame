@@ -51,7 +51,6 @@ ${postLines}
 - Home: ${SITE_URL}/
 - All posts: ${SITE_URL}/posts/
 - Topics: ${SITE_URL}/topics/
-- Resources: ${SITE_URL}/resources/
 - About the author: ${SITE_URL}/about/
 - Contact: ${SITE_URL}/contact/
 

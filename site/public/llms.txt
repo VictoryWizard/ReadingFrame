@@ -33,7 +33,6 @@ ReadingFrame is an independent research blog by Heram Nagabhairu, a high school 
 - Home: https://reading-frame.com/
 - All posts: https://reading-frame.com/posts/
 - Topics: https://reading-frame.com/topics/
-- Resources: https://reading-frame.com/resources/
 - About the author: https://reading-frame.com/about/
 - Contact: https://reading-frame.com/contact/
 

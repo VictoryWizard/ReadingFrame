@@ -70,14 +70,6 @@ export default function AboutPage() {
               </div>
             ))}
           </div>
-          <p className="mt-4">
-            I also keep a running list of the databases, tools, and primary sources behind these
-            breakdowns on the{" "}
-            <Link href="/resources/" className="text-[var(--rf-accent)] font-semibold">
-              resources page
-            </Link>
-            .
-          </p>
         </section>
         <section>
           <h2>Mentions &amp; coverage</h2>

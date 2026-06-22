@@ -27,7 +27,6 @@ export function SiteFooter() {
             LinkedIn
           </a>
           <Link href="/topics/">Topics</Link>
-          <Link href="/resources/">Resources</Link>
           <Link href="/about/">About</Link>
           <Link href="/contact/">Contact</Link>
         </nav>
